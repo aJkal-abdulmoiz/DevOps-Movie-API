@@ -57,13 +57,13 @@
 
         document.getElementById('search-title').addEventListener('click', async () => {
             const title = document.getElementById('title').value;
-            const response = await fetch(/movies?title=${title});
+            const response = await fetch(`/movies?title=${title}`);
             const movies = await response.json();
             displayResults(movies);
         });
 
         document.getElementById('view-popular').addEventListener('click', async () => {
-            const response = await fetch(/movies/popular);
+            const response = await fetch("/movies/popular");
             const movies = await response.json();
             displayResults(movies);
         });
@@ -71,7 +71,7 @@
         document.getElementById('get-recommendations').addEventListener('click', async () => {
             const genre = document.getElementById('genre').value;
             const country = document.getElementById('country').value;
-            const response = await fetch(/movies/recommend?genre=${genre}&country=${country});
+            const response = await fetch(`/movies/recommend?genre=${genre}&country=${country}`);
             const movies = await response.json();
             displayResults(movies);
         });

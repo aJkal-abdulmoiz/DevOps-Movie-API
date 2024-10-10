@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request,render_template
 import requests
 import os
 from dotenv import load_dotenv
@@ -8,6 +8,11 @@ load_dotenv()
 app = Flask(__name__)
 TMDB_API_KEY = os.getenv('TMDB_API_KEY')
 
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+        
 
 # Movie Search Endpoint
 @app.route('/movies', methods=['GET'])
