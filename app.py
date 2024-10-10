@@ -79,5 +79,24 @@ def get_genre_id(genre_name):
             return genre['id']
     return None
 
+
+#Popular Movie Endpoint
+@app.route('/movies/popular', methods=['GET'])
+def popular_movies():
+    url = f"https://api.themoviedb.org/3/movie/popular?api_key={TMDB_API_KEY}&language=en-US&page=1"
+    response = requests.get(url)
+    data = response.json()
+
+    movies = []
+    for movie in data.get('results', [])[:5]:  # Limit to top 5 popular movies
+        movies.append({
+            'title': movie['title'],
+            'description': movie['overview'],
+            'rating': movie['vote_average'],
+            'image': f"https://image.tmdb.org/t/p/w500{movie['poster_path']}" if movie['poster_path'] else None
+        })
+
+    return jsonify(movies)
+
 if __name__ == '__main__':
     app.run(debug=True)
