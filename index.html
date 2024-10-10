@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Movie Recommendation Site</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Movie Recommendations</h1>
+        <div class="options">
+            <button id="search-title-btn">Search by Title</button>
+            <button id="popular-movies-btn">See Popular Movies</button>
+            <button id="recommendations-btn">Get Recommendations</button>
+        </div>
+
+        <div id="search-section" class="hidden">
+            <h2>Search Movies</h2>
+            <input type="text" id="title" placeholder="Enter movie title..." required>
+            <button id="search-title">Search</button>
+        </div>
+
+        <div id="popular-section" class="hidden">
+            <h2>Popular Movies</h2>
+            <button id="view-popular">View Popular</button>
+        </div>
+
+        <div id="recommend-section" class="hidden">
+            <h2>Get Recommendations</h2>
+            <input type="text" id="genre" placeholder="Genre (e.g., Action)">
+            <input type="text" id="country" placeholder="Country (e.g., US)">
+            <button id="get-recommendations">Get Recommendations</button>
+        </div>
+
+        <div id="results"></div>
+    </div>
+
+    <script>
+        document.getElementById('search-title-btn').addEventListener('click', () => {
+            document.getElementById('search-section').classList.toggle('hidden');
+            document.getElementById('popular-section').classList.add('hidden');
+            document.getElementById('recommend-section').classList.add('hidden');
+        });
+
+        document.getElementById('popular-movies-btn').addEventListener('click', () => {
+            document.getElementById('popular-section').classList.toggle('hidden');
+            document.getElementById('search-section').classList.add('hidden');
+            document.getElementById('recommend-section').classList.add('hidden');
+        });
+
+        document.getElementById('recommendations-btn').addEventListener('click', () => {
+            document.getElementById('recommend-section').classList.toggle('hidden');
+            document.getElementById('search-section').classList.add('hidden');
+            document.getElementById('popular-section').classList.add('hidden');
+        });
+
+        document.getElementById('search-title').addEventListener('click', async () => {
+            const title = document.getElementById('title').value;
+            const response = await fetch(/movies?title=${title});
+            const movies = await response.json();
+            displayResults(movies);
+        });
+
+        document.getElementById('view-popular').addEventListener('click', async () => {
+            const response = await fetch(/movies/popular);
+            const movies = await response.json();
+            displayResults(movies);
+        });
+
+        document.getElementById('get-recommendations').addEventListener('click', async () => {
+            const genre = document.getElementById('genre').value;
+            const country = document.getElementById('country').value;
+            const response = await fetch(/movies/recommend?genre=${genre}&country=${country});
+            const movies = await response.json();
+            displayResults(movies);
+        });
+
+        function displayResults(movies) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+            movies.forEach(movie => {
+                resultsDiv.innerHTML += `
+                    <div class="movie">
+                        <img src="${movie.image}" alt="${movie.title}">
+                        <h3>${movie.title}</h3>
+                        <p>${movie.description}</p>
+                        <p>Rating: ${movie.rating}</p>
+                    </div>
+                `;
+            });
+        }
+    </script>
+</body>
+</html>
