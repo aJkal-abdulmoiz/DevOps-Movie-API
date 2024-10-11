@@ -56,7 +56,7 @@ You can interact with the API endpoints using cURL or Postman.
     curl -X GET "http://127.0.0.1:5000/movies/recommend?genre=Action&country=US"
 
 
-###Using Postman
+### Using Postman
 
 
 Create a new GET request for each endpoint:
