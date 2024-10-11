@@ -99,6 +99,10 @@ Create a new GET request for each endpoint:
 - **Get Recommendations:** Click to get movie recommendations based on genre and country.
 
 
+## Using Unit Testing:
+   ```bash
+  python -m unittest test_api.py
+
 
 
     
