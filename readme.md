@@ -1,10 +1,10 @@
 # DevOps Movie Recommendation API
 
 ## Contributors
-
-- **Abdul Moiz:** Backend API development and endpoints.
-- **Rayan:** Frontend development.
-- **Abdullah:** Testing and quality assurance.
+ **NAME**       | **ROLE**                     | **BRANCH**
+- **Abdul Moiz:** Backend API development and endpoints.(main)
+- **Rayan:** Frontend development.(frontend)
+- **Abdullah:** Testing and quality assurance.(testing)
 
 
 ## Purpose
