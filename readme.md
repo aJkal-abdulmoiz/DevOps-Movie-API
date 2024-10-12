@@ -2,7 +2,7 @@
 
 ## Contributors
 
-- **Abdul Moiz:** Backend API development and endpoints.(main)
+- **Abdul Moiz:** Backend API development and endpoints.(backend)
 - **Rayan:** Frontend development.(frontend)
 - **Abdullah:** Testing and quality assurance.(testing)
 
