@@ -69,20 +69,21 @@ Create a new GET request for each endpoint:
 - **Popular Movies**:
    ```bash
     http://127.0.0.1:5000/movies/popular
-
-   https://github.com/aJkal-abdulmoiz/DevOps-Movie-Recommendtion-API/blob/f5ceb5033e0fad9db1be3036ca3b16c4d008a0ce/assets/images/popular-endpoint-json-response.png
-
+   
+![image](https://github.com/aJkal-abdulmoiz/DevOps-Movie-Recommendtion-API/blob/f5ceb5033e0fad9db1be3036ca3b16c4d008a0ce/assets/images/popular-endpoint-json-response.png)
+   
 - **Search Movies by Title:**:
    ```bash
     http://127.0.0.1:5000/movies?title=Inception
-
-   https://github.com/aJkal-abdulmoiz/DevOps-Movie-Recommendtion-API/blob/f5ceb5033e0fad9db1be3036ca3b16c4d008a0ce/assets/images/movies-titleendpoint-json-response.png
+   
+![image](https://github.com/aJkal-abdulmoiz/DevOps-Movie-Recommendtion-API/blob/f5ceb5033e0fad9db1be3036ca3b16c4d008a0ce/assets/images/movies-titleendpoint-json-response.png)
+   
     
 - **Get Movie Recommendations::**:
    ```bash
     http://127.0.0.1:5000/movies/recommend?genre=Action&country=US
 
-   https://github.com/aJkal-abdulmoiz/DevOps-Movie-Recommendtion-API/blob/f5ceb5033e0fad9db1be3036ca3b16c4d008a0ce/assets/images/get-recommendation-endpoint-json-response.png
+![image](https://github.com/aJkal-abdulmoiz/DevOps-Movie-Recommendtion-API/blob/f5ceb5033e0fad9db1be3036ca3b16c4d008a0ce/assets/images/get-recommendation-endpoint-json-response.png)
     
 
 3. **Click on Send.:**
@@ -101,16 +102,18 @@ Create a new GET request for each endpoint:
 ## Using the Frontend:
 
 - **Search by Title:** Click on this option to search for a movie by its title.
-  https://github.com/aJkal-abdulmoiz/DevOps-Movie-Recommendtion-API/blob/f5ceb5033e0fad9db1be3036ca3b16c4d008a0ce/assets/images/search-by-title.png
+
+![image](https://github.com/aJkal-abdulmoiz/DevOps-Movie-Recommendtion-API/blob/f5ceb5033e0fad9db1be3036ca3b16c4d008a0ce/assets/images/search-by-title.png)
+  
 - **See Popular Movies:** Click here to view the top popular movies.
-  https://github.com/aJkal-abdulmoiz/DevOps-Movie-Recommendtion-API/blob/f5ceb5033e0fad9db1be3036ca3b16c4d008a0ce/assets/images/popular-movies.png
+
+![image](https://github.com/aJkal-abdulmoiz/DevOps-Movie-Recommendtion-API/blob/f5ceb5033e0fad9db1be3036ca3b16c4d008a0ce/assets/images/popular-movies.png)
+  
 - **Get Recommendations:** Click to get movie recommendations based on genre and country.
-  https://github.com/aJkal-abdulmoiz/DevOps-Movie-Recommendtion-API/blob/f5ceb5033e0fad9db1be3036ca3b16c4d008a0ce/assets/images/get-recommendations.png
+
+![image](https://github.com/aJkal-abdulmoiz/DevOps-Movie-Recommendtion-API/blob/f5ceb5033e0fad9db1be3036ca3b16c4d008a0ce/assets/images/get-recommendations.png)
 
 
-## Using Unit Testing:
-   ```bash
-  python -m unittest test_api.py
 
 
 
