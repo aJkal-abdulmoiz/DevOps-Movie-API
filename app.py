@@ -19,7 +19,7 @@ def index():
 def search_movies():
     title = request.args.get('title')
     page = request.args.get('page', default=1, type=int)
-    limit = request.args.get('limit', default=5, type=int)
+    limit = request.args.get('limit', default=6, type=int)
 
     if not title:
         return jsonify({"error": "Title is required"}), 400  # Error handling for missing title
@@ -53,7 +53,7 @@ def recommend_movies():
     genre = request.args.get('genre')
     country = request.args.get('country')
     page = request.args.get('page', default=1, type=int)
-    limit = request.args.get('limit', default=5, type=int)
+    limit = request.args.get('limit', default=6, type=int)
 
     try:
         genre_id = get_genre_id(genre)
@@ -110,7 +110,7 @@ def popular_movies():
         data = response.json()
 
         movies = []
-        for movie in data.get('results', [])[:5]:  # Limit to top 5 popular movies
+        for movie in data.get('results', [])[:10]:  # Limit to top 5 popular movies
             movies.append({
                 'title': movie['title'],
                 'description': movie['overview'],
