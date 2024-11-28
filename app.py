@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
-TMDB_API_KEY = os.getenv('TMDB_API_KEY')
+TMDB_API_KEY = os.getenv('ep_2pT57qVTVmbQee8bIgLYFXbzbEk')
 
 
 @app.route('/')
